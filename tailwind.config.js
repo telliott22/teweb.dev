@@ -15,6 +15,9 @@ module.exports = {
         white: '#eff6fb'
       },
       spacing: {
+        '1/6': '16.6666666667%',
+        '1/4': '25%',
+        'h-screen': '100vh',
       },
       letterSpacing: {
         tighter: '-.04em',
