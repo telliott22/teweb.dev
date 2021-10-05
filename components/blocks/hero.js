@@ -78,7 +78,7 @@ export default function Hero({data}) {
   });
 
   return (
-    <section className="h-screen bg-black text-white py-6 relative">
+    <section className="h-screen bg-black text-white py-6 relative cursor-none">
       
       <div className="flex flex-row">
         <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-10xl leading-tighter z-10 relative">
@@ -157,16 +157,16 @@ export default function Hero({data}) {
 
         <div className="mb-20 space-y-2">
           <p>Full-stack web developer</p>
-          <p>Made in London <span className="relative text-6xl top-[2px]">🇬🇧</span></p>
-          <p>Based in Berlin <span className="relative text-6xl top-[2px]">🇩🇪</span></p>
+          <p>Made in London <span className="relative text-6xl top-[5px]">🇬🇧</span></p>
+          <p>Based in Berlin <span className="relative text-6xl top-[5px]">🇩🇪</span></p>
         </div>
           
         <ul className="flex justify-between w-full text-lg">
-          <li><a href="">Insta</a></li>
-          <li><a href="">Github</a></li>
-          <li><a href="">Email</a></li>
-          <li><a href="">Codepen</a></li>
-          <li><a href="">CV</a></li>
+          <li><a className="p-5 cursor-none" data-hover-icon="instagram.png" href="https://www.instagram.com/timothy_buktu_22/" target="_blank">Insta</a></li>
+          <li><a className="p-5 cursor-none" data-hover-icon="github.png" href="https://github.com/telliott22" target="_blank">Github</a></li>
+          <li><a className="p-5 cursor-none" data-hover-icon="envelope.png" href="mailto:tim@teweb.dev">Email</a></li>
+          <li><a className="p-5 cursor-none" data-hover-icon="laptop.png" href="https://codepen.io/timothybuktu" target="_blank">Codepen</a></li>
+          <li><a className="p-5 cursor-none" data-hover-icon="cv.png" href="">CV</a></li>
         </ul>
       </div>
     </section>

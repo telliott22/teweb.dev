@@ -19,6 +19,9 @@ module.exports = {
         '1/4': '25%',
         'h-screen': '100vh',
       },
+      cursor:{
+        'none': 'none'
+      },
       letterSpacing: {
         tighter: '-.04em',
       },
