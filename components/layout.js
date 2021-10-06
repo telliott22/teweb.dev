@@ -1,4 +1,3 @@
-import Footer from '../components/footer'
 
 export default function Layout({ preview, children }) {
   return (
@@ -6,7 +5,6 @@ export default function Layout({ preview, children }) {
       <div className="min-h-screen">
         <main>{children}</main>
       </div>
-      <Footer />
     </>
   )
 }

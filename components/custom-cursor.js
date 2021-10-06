@@ -10,7 +10,7 @@ export default function CustomCursor({}){
 
     function renderHoverIcon(){
 
-        let hoverIconPath = 'finger.png'
+        let hoverIconPath = 'finger.svg'
 
         if(hoverIcon){
             hoverIconPath = hoverIcon

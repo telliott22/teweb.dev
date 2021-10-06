@@ -12,7 +12,7 @@ module.exports = {
         },
         yellow: '#DAB45B',
         black: '#000000',
-        white: '#eff6fb'
+        white: '#ffffff'
       },
       spacing: {
         '1/6': '16.6666666667%',
