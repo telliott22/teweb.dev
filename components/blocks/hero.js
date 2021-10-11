@@ -80,7 +80,7 @@ export default function Hero({data}) {
 
   return (
     <Container>
-      <section className="h-screen bg-black text-white py-6 cursor-none relative">
+      <section className="min-h-screen bg-black text-white py-6 cursor-none relative mb-28">
         
         <div className="flex flex-row">
           <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-10xl leading-tighter z-10 relative">

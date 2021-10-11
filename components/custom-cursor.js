@@ -16,7 +16,7 @@ export default function CustomCursor({}){
             hoverIconPath = hoverIcon
         }
 
-        return <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={'icons/'+hoverIconPath} /> 
+        return <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={'/icons/'+hoverIconPath} /> 
         
     }
 
@@ -54,7 +54,7 @@ export default function CustomCursor({}){
     }
 
     return (
-        <div id="customCursor" className="fixed top-0 left-0 pointer-events-none h-10 w-10 z-20" >
+        <div id="customCursor" className="none md:block fixed top-0 left-0 pointer-events-none h-10 w-10 z-20" >
             {renderHoverIcon()}
         </div>
     )
