@@ -6,7 +6,7 @@ export default function CustomCursor({}){
 
     useEffect(()=>{
         initCustomCursor();
-    })
+    },[])
 
     function renderHoverIcon(){
 

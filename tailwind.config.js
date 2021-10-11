@@ -37,6 +37,7 @@ module.exports = {
         '8xl': '6.25rem',
         '9xl': '12vw',
         '10xl': '20vw',
+        '11xl': '25vw',
       },
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
@@ -46,6 +47,15 @@ module.exports = {
         'serif': ['Libre Baskerville','serif'],
         'display-head': ['thunder', 'sans-serif'],
       },
+      animation: {
+        'scale-pulse': 'scale-pulse 0.5s linear infinite',
+       },
+      keyframes: {
+        'scale-pulse': {
+          '0%, 100%': { transform: 'scale(1.1)' },
+          '50%': { transform: 'scale(0.9)' },
+        }
+       }
     },
   },
   variants: {
