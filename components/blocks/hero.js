@@ -47,7 +47,7 @@ export default function Hero() {
     })
     .set(whiteBackground.current,{
      autoAlpha: 0,
-     delay: 1
+    //  delay: 0.5
     })
     .set(title.current,{
       opacity: 1,
@@ -129,7 +129,7 @@ export default function Hero() {
 
       timeline.play()
 
-    },6000)
+    },5000)
 
   }
 
