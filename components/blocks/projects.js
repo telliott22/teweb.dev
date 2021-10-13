@@ -82,10 +82,8 @@ export default function Projects({}){
             return (
                 <div>
 
-                    <div className="w-full">
-
+                    <div className="w-full rounded-lg overflow-hidden">
                         <Image src={activeProject.image} />
-
                     </div>
 
                     <div className="w-4/5 ml-auto mt-10 space-y-4"> 
@@ -142,6 +140,10 @@ export default function Projects({}){
             <Container>
 
                 <div ref={ scrollContainer } className="relative">
+{/* 
+                    <div className="w-10/12 m-auto top-16 left-0 absolute">
+                        <h3 className="text-2xl text-white">Projects</h3>
+                    </div> */}
                 
                     <div className="w-6/12 py-48">
 

@@ -2,7 +2,7 @@ import { useEffect,useState  } from 'react'
 
 export default function CustomCursor({}){
 
-    const [hoverIcon, setHoverIcon] = useState(1);
+    const [hoverIcon, setHoverIcon] = useState(null);
 
     useEffect(()=>{
         initCustomCursor();
@@ -10,13 +10,16 @@ export default function CustomCursor({}){
 
     function renderHoverIcon(){
 
-        let hoverIconPath = 'finger.svg'
+        let hoverIconPath = null;
+        // let hoverIconPath = 'finger.svg'
 
         if(hoverIcon){
-            hoverIconPath = hoverIcon
+            // hoverIconPath = hoverIcon
+            return <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={'/icons/'+hoverIcon} /> 
+
         }
 
-        return <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={'/icons/'+hoverIconPath} /> 
+        return null;
         
     }
 
@@ -31,7 +34,6 @@ export default function CustomCursor({}){
 
             customCursor.style.transform = `translate(${x}px,${y}px)`
 
-
             const target = e.target;
 
             const hoverIcon = target.getAttribute('data-hover-icon');
@@ -45,7 +47,7 @@ export default function CustomCursor({}){
 
             }else{
 
-                document.body.style.cursor = 'auto';
+                document.body.style.cursor = 'default';
                 setHoverIcon(null);
 
             }
@@ -54,7 +56,7 @@ export default function CustomCursor({}){
     }
 
     return (
-        <div id="customCursor" className="none md:block fixed top-0 left-0 pointer-events-none h-10 w-10 z-20" >
+        <div id="customCursor" className="hidden md:block fixed top-0 left-0 pointer-events-none h-10 w-10 z-20" >
             {renderHoverIcon()}
         </div>
     )

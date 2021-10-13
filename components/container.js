@@ -1,3 +1,8 @@
-export default function Container({ children }) {
-  return <div className="px-6 mx-auto">{children}</div>
+export default function Container({ children,  className }) {
+
+  function getClasses(){
+    return `px-6 mx-auto ${className}`
+  }
+
+  return <div className={ getClasses() }>{children}</div>
 }

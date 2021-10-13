@@ -162,9 +162,8 @@ export default function Hero() {
 
       { loadingScreen() }
 
-      <section className="min-h-screen bg-black text-white py-6 cursor-none relative mb-28">
+      <section className="min-h-screen bg-black text-white py-6 relative mb-28">
 
-          
         <div className="flex flex-row">
           <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-11xl md:text-10xl leading-tighter z-10 relative opacity-0" ref={ title }>
             <span className="relative top-[15px]">
@@ -246,7 +245,7 @@ export default function Hero() {
             <p>Based in Berlin <span className="relative text-6xl top-[5px]">🇩🇪</span></p>
           </div>
             
-          <ul className="flex justify-between w-full text-lg  opacity-0" ref={ links }>
+          <ul className="flex justify-between flex-col md:flex-row space-y-2 md:space-y-0 w-full text-lg opacity-0" ref={ links }>
             <li><a className="p-5 cursor-none" data-hover-icon="instagram.png" href="https://www.instagram.com/timothy_buktu_22/" target="_blank">Insta</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="github.png" href="https://github.com/telliott22" target="_blank">Github</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="envelope.png" href="mailto:tim@teweb.dev">Email</a></li>
