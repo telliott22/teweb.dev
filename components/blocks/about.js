@@ -11,7 +11,7 @@ export default function about({}){
                     <h3 className="text-2xl">About</h3>
                 </div> */}
 
-                <div className="md:w-8/12 m-auto">
+                <div className="md:w-8/12 lg:w-6/12 m-auto">
 
                     <div className="space-y-6 text-xl leading-relaxed">
                         <p>I'm a freelance full-stack Web Developer with a passion for Javascript who has recently moved from London, England to Berlin. I'm keen to expand my network to find new opportunities to work on exciting projects and find like minded people to collaborate with. I'm currently looking for freelance roles in the tech industry, but I'm open to any opportunity to learn and grow.</p>

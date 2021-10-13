@@ -248,7 +248,7 @@ export default function Hero() {
           <ul className="flex justify-between flex-col md:flex-row space-y-2 md:space-y-0 w-full text-lg opacity-0" ref={ links }>
             <li><a className="p-5 cursor-none" data-hover-icon="instagram.png" href="https://www.instagram.com/timothy_buktu_22/" target="_blank">Insta</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="github.png" href="https://github.com/telliott22" target="_blank">Github</a></li>
-            <li><a className="p-5 cursor-none" data-hover-icon="envelope.png" href="mailto:tim@teweb.dev">Email</a></li>
+            <li><a className="p-5 cursor-none" data-hover-icon="envelope.png" href="mailto:hello@teweb.dev">Email</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="laptop.png" href="https://codepen.io/timothybuktu" target="_blank">Codepen</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="cv.png" href="">CV</a></li>
           </ul>
