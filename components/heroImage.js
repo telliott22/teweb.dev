@@ -15,7 +15,7 @@ export default function heroImage({image}){
     }
     
     return(
-        <div className="pointer">
+        <div className="pointer rounded-lg overflow-hidden">
             <Image onMouseEnter={showImage} onMouseLeave={hideImage} className="hero-image opacity-0 pointer" layout="responsive" src={image} alt="Timo Elliott" />
         </div>
     )
