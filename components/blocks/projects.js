@@ -111,7 +111,7 @@ export default function Projects({}){
     function renderList(){
 
         return projects.map((project,index) => {
-            return <li className="font-display-head text-[10vw] leading-tightish opacity-20 hover:opacity-100 cursor-pointer" style={{fontVariationSettings: '"wght" 850'}} onMouseEnter={() => hoverListItem(index)} key={index}>{project.title}</li>
+            return <li className="font-display-head text-[12vw] leading-tightish opacity-20 hover:opacity-100 cursor-pointer" style={{fontVariationSettings: '"wght" 850'}} onMouseEnter={() => hoverListItem(index)} key={index}>{project.title}</li>
         })
     }
 
@@ -140,12 +140,12 @@ export default function Projects({}){
             <Container>
 
                 <div ref={ scrollContainer } className="relative flex flex-col">
-{/* 
-                    <div className="w-10/12 m-auto top-16 left-0 absolute">
-                        <h3 className="text-2xl text-white">Projects</h3>
-                    </div> */}
                 
-                    <div className="w-full md:w-6/12 py-48">
+                    <div className="w-10/12 m-auto top-16 left-0 absolute">
+                        <h3 className="text-2xl text-white">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
+                    </div>
+
+                    <div className="w-full md:w-6/12 py-80">
 
                         <ul className="relative z-10 scew-3d">
 

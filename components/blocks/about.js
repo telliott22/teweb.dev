@@ -33,10 +33,10 @@ export default function about({}){
         <section ref={textContainer}  className="min-h-screen  text-white relative z-10 font-serif flex flex-col md:flex-row md:justify-center md:items-center py-14 md:py-0">
 
             <Container>
-{/* 
-                <div className="md:top-16 md:absolute md:left-6 pb-8  md:py-0">
-                    <h3 className="text-2xl">About</h3>
-                </div> */}
+
+                <div className="w-10/12 m-auto top-16 left-6 absolute">
+                    <h3 className="text-2xl text-white">About me<span className="relative top-[1px] left-1">👨🏽‍🦲</span></h3>
+                </div>
 
                 <div className="md:w-8/12 lg:w-6/12 m-auto">
 

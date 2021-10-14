@@ -36,6 +36,10 @@ export default function Projects({}){
     return (
         <section className="min-h-screen bg-black text-black flex flex-col justify-center items-center z-10 relative">
 
+            <div className="w-10/12 m-auto top-16 left-6 absolute">
+                <h3 className="text-2xl text-white">Some tech I <span className="relative top-0 left-1">❤️</span></h3>
+            </div>
+
             <div>
 
                 <Marquee {...marqueeConfig}>
