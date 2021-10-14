@@ -19,9 +19,9 @@ function renderPage({ pageData, settings }) {
 
         <Hero />
 
-        <Projects />
-
         <About />
+
+        <Projects />
 
         <Tech />
 

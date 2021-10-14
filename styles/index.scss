@@ -4,4 +4,10 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-@import './fonts.scss'
+@import './fonts.scss';
+
+.scew-3d{
+
+    // transform: perspective(1000px) rotateY(45deg) scale(0.8)
+
+}

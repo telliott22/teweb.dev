@@ -13,22 +13,23 @@ import HeroImage from '../heroImage.js';
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Container from '../container'
-
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Hero() {
 
   const [animated, setAnimated] = useState(false)
-  const [imageTimeline, setImageTimeline] = useState(null)
   const whiteBackground = useRef(null);
   const blackDot = useRef(null);
   const title = useRef(null);
   const text = useRef(null);
   const links = useRef(null);
+  const hero = useRef(null);
 
   function initIntroAnimation(){
 
     document.documentElement.classList.add('overflow-hidden');
-    document.documentElement.scrollTop = 0;
+    
+    
 
     const customCursor = document.querySelector('#customCursor');
 
@@ -36,6 +37,10 @@ export default function Hero() {
 
     const introAnimationTimeline = gsap.timeline({
       paused: true,
+      onStart: () => {
+        console.log('FIRING NOW')
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      },
       onComplete: () => {
         setAnimated(true)
         document.documentElement.classList.remove('overflow-hidden');
@@ -43,7 +48,8 @@ export default function Hero() {
     });
 
     introAnimationTimeline.to(blackDot.current,{
-      scale: 100
+      scale: 50,
+      ease: "power3.in",
     })
     .set(whiteBackground.current,{
      autoAlpha: 0,
@@ -51,7 +57,7 @@ export default function Hero() {
     })
     .set(title.current,{
       opacity: 1,
-      delay: delay
+      delay: delay * 2
     })
     .set(text.current,{
       opacity: 1,
@@ -72,9 +78,11 @@ export default function Hero() {
 
     setTimeout(()=>{
       introAnimationTimeline.play();
-    },2000)
+    },2500)
 
   }
+
+  
 
   function initImageAnimation(){
 
@@ -128,7 +136,7 @@ export default function Hero() {
 
       timeline.play()
 
-    },5000)
+    },6000)
 
   }
 
@@ -144,11 +152,11 @@ export default function Hero() {
     }else{
 
      return( 
-     <div className="bg-white fixed top-0 left-0 z-10 h-screen w-screen" ref={whiteBackground}>
+     <div className="bg-white fixed top-0 left-0 z-50 h-screen w-screen" ref={whiteBackground}>
 
-      <div className="animate-scale-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div ref={blackDot} className="bg-black rounded-full h-5 w-5"></div>
-      </div>
+        <div className="animate-scale-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div ref={blackDot} className="bg-black h-[2vh] w-[2vw]"></div>
+        </div>
        
       </div>
      )
@@ -162,10 +170,10 @@ export default function Hero() {
 
       { loadingScreen() }
 
-      <section className="min-h-screen bg-black text-white py-6 relative mb-28">
+      <section ref={ hero } className="min-h-screen bg-black text-white py-6 relative mb-28">
 
         <div className="flex flex-row">
-          <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-11xl md:text-10xl leading-tighter z-10 relative opacity-0" ref={ title }>
+          <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-11xl md:text-10xl leading-tighter z-10 relative opacity-0 text-section" ref={ title } >
             <span className="relative top-[15px]">
               <span className="relative right-[8px]">TIM</span>
               <br/>ELLIOTT 
@@ -177,11 +185,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3">
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3">
           <HeroImage className="opacity-0" image={TimImage10} />
         </div>
 
-        <div className="absolute top-6 right-0 h-4/12 w-full md:w-5/12 flex flex-row space-x-10">
+        <div className="fixed top-6 right-6 h-4/12 w-full md:w-5/12 flex flex-row space-x-10">
 
           <div className="flex flex-col w-4/6 space-y-10">
 
@@ -209,7 +217,7 @@ export default function Hero() {
 
         </div>
 
-        <div className="absolute bottom-6 left-0 h-1/2 w-full md:w-4/12 flex flex-col space-y-10">
+        <div className="fixed bottom-6 left-6 h-1/2 w-full md:w-4/12 flex flex-col space-y-10">
 
           <div className="flex flex-row space-x-10 h-4/6 w-full items-end">
 
@@ -237,7 +245,7 @@ export default function Hero() {
 
         </div>
 
-        <div className="absolute bottom-6 left-0 text-right text-3xl font-serif space-y-2 w-full md:w-1/2 md:right-0 md:left-auto">
+        <div className="absolute bottom-6 left-0 text-right text-3xl font-serif space-y-2 w-full md:w-1/2 md:right-0 md:left-auto text-section">
 
           <div className="mb-20 space-y-2 z-20  opacity-0" ref={text}>
             <p>Full-stack web developer</p>

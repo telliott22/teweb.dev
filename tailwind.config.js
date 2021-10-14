@@ -35,7 +35,7 @@ module.exports = {
         '6xl': '2.75rem',
         '7xl': '4.5rem',
         '8xl': '6.25rem',
-        '9xl': '12vw',
+        '9xl': '16vw',
         '10xl': '20vw',
         '11xl': '25vw',
       },
@@ -48,7 +48,7 @@ module.exports = {
         'display-head': ['thunder', 'sans-serif'],
       },
       animation: {
-        'scale-pulse': 'scale-pulse 0.5s linear infinite',
+        'scale-pulse': 'scale-pulse 1s linear infinite',
        },
       keyframes: {
         'scale-pulse': {

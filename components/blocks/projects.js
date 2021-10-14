@@ -80,7 +80,7 @@ export default function Projects({}){
         if (activeProject && activeProject.title) {
 
             return (
-                <div>
+                <div className="bg-black">
 
                     <div className="w-full rounded-lg overflow-hidden">
                         <Image src={activeProject.image} />
@@ -111,7 +111,7 @@ export default function Projects({}){
     function renderList(){
 
         return projects.map((project,index) => {
-            return <li className="font-display-head text-9xl leading-tightish opacity-20 hover:opacity-100" style={{fontVariationSettings: '"wght" 850'}} onMouseEnter={() => hoverListItem(index)} key={index}>{project.title}</li>
+            return <li className="font-display-head text-[10vw] leading-tightish opacity-20 hover:opacity-100 cursor-pointer" style={{fontVariationSettings: '"wght" 850'}} onMouseEnter={() => hoverListItem(index)} key={index}>{project.title}</li>
         })
     }
 
@@ -135,19 +135,19 @@ export default function Projects({}){
     
 
     return (
-        <section className="min-h-screen bg-black font-serif text-white overflow-hidden">
+        <section className="min-h-screen bg-black font-serif text-white overflow-hidden z-10 relative">
 
             <Container>
 
-                <div ref={ scrollContainer } className="relative">
+                <div ref={ scrollContainer } className="relative flex flex-col">
 {/* 
                     <div className="w-10/12 m-auto top-16 left-0 absolute">
                         <h3 className="text-2xl text-white">Projects</h3>
                     </div> */}
                 
-                    <div className="w-6/12 py-48">
+                    <div className="w-full md:w-6/12 py-48">
 
-                        <ul className="relative z-10">
+                        <ul className="relative z-10 scew-3d">
 
                             { renderList() }                        
 
