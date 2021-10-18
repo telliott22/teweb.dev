@@ -8,7 +8,7 @@ export default function Projects({}){
         'React', 'Next', 'Sanity' , 'Tailwind', 'Vue', 'Nuxt'
     ]
     const line2 = [
-        'Laravel', 'Vercel', 'Adonis', 'AWS', 'PHP', 'GSAP'
+        'Laravel', 'Vercel', 'Adonis', 'AWS', 'PHP', 'GSAP', 'Three.js'
     ]
     const line3 = [
         'WEBGL', 'Shopify', 'Vue', 'React', 'Tailwind', 'Wordpress'
@@ -34,13 +34,13 @@ export default function Projects({}){
     }
 
     return (
-        <section className="min-h-screen bg-black text-black flex flex-col justify-center items-center z-10 relative">
+        <section className="md:min-h-screen bg-black text-black flex flex-col justify-center md:items-center z-10 relative">
 
-            <div className="w-10/12 m-auto top-16 left-6 absolute">
+            <div className="md:w-10/12 md:m-auto top-16 left-6 md:absolute pt-8 pl-6  md:p-0">
                 <h3 className="text-2xl text-white">Some tech I <span className="relative top-0 left-1">❤️</span></h3>
             </div>
 
-            <div>
+            <div className="pt-20 pb-28 md:py-0"> 
 
                 <Marquee {...marqueeConfig}>
                     {printLine(line1)}

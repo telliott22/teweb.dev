@@ -15,6 +15,7 @@ export default function Projects({}){
     const scrollContainer = useRef(0);
     const image = useRef(0);
     const [activeProject, setActiveProject] = useState({});
+    const transformWrapper = useRef(0);
 
     const projects = [
 
@@ -29,12 +30,6 @@ export default function Projects({}){
         {title: 'Highrise', category: "Marketing Agency", url: 'https://highrise.com', image: HighriseImage, technologies: ['Sanity', 'Vue.js', 'Nuxt.js', 'GSAP', 'Vercel']}
 
     ]
-
-    function hoverListItem(index){
-
-        setActiveProject(projects[index]);
-
-    }
 
     useEffect(()=>{
 
@@ -67,6 +62,29 @@ export default function Projects({}){
 
             image.current.classList.add('absolute','top-0');
             image.current.classList.remove('fixed','pr-6','bottom-0');
+
+        }
+
+
+
+        // const rotation = scrollTop * Math.PI / 180;
+
+        // transformWrapper.current.style.transform = `rotateX(${rotation}deg)`;
+
+        // console.log('rotation',rotation)
+
+
+
+
+        const middleOfScreen = window.innerHeight / 2;
+
+        const activeProjectElement = document.elementFromPoint(100, `${middleOfScreen}`);
+
+        if(activeProjectElement.classList.contains('project-item') && activeProjectElement.getAttribute('data-project-index')){
+
+            const projectIndex = activeProjectElement.getAttribute('data-project-index');
+            
+            setActiveProject(projects[projectIndex]);
 
         }
 
@@ -109,54 +127,60 @@ export default function Projects({}){
     }
 
     function renderList(){
-
         return projects.map((project,index) => {
-            return <li className="font-display-head text-[12vw] leading-tightish opacity-20 hover:opacity-100 cursor-pointer" style={{fontVariationSettings: '"wght" 850'}} onMouseEnter={() => hoverListItem(index)} key={index}>{project.title}</li>
+            return <li className={`project-item font-display-head text-[12vw] leading-tightish cursor-pointer ${activeProject.title === project.title ? 'text-white' : 'text-grey'}` }
+             data-project-index={index} style={{fontVariationSettings: '"wght" 850'}} key={index}>{project.title}</li>
         })
     }
 
     function getCoords(elem) { // crossbrowser version
-        var box = elem.getBoundingClientRect();
+
+        if(elem){
+
+            var box = elem.getBoundingClientRect();
     
-        var body = document.body;
-        var docEl = document.documentElement;
-    
-        var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-        var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-    
-        var clientTop = docEl.clientTop || body.clientTop || 0;
-        var clientLeft = docEl.clientLeft || body.clientLeft || 0;
-    
-        var top  = box.top +  scrollTop - clientTop;
-        var left = box.left + scrollLeft - clientLeft;
-    
-        return { top: Math.round(top), left: Math.round(left) };
+            var body = document.body;
+            var docEl = document.documentElement;
+        
+            var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+            var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+        
+            var clientTop = docEl.clientTop || body.clientTop || 0;
+            var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+        
+            var top  = box.top +  scrollTop - clientTop;
+            var left = box.left + scrollLeft - clientLeft;
+        
+            return { top: Math.round(top), left: Math.round(left) };
+
+        }
+        
     }
-    
 
     return (
         <section className="min-h-screen bg-black font-serif text-white overflow-hidden z-10 relative">
+        {/* <section className="h-[200vh] bg-black font-serif text-white overflow-hidden z-10 relative"> */}
 
             <Container>
 
                 <div ref={ scrollContainer } className="relative flex flex-col">
                 
-                    <div className="w-10/12 m-auto top-16 left-0 absolute">
+                    <div className="w-10/12 m-auto top-24 left-0 absolute">
                         <h3 className="text-2xl text-white">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
                     </div>
 
-                    <div className="w-full md:w-6/12 py-80">
+                    <div className="w-full md:w-6/12 py-60  ">
 
-                        <ul className="relative z-10 scew-3d">
+                            <ul ref={ transformWrapper } className="relative z-10 scew-3d">
 
-                            { renderList() }                        
+                                { renderList() }                        
 
-                        </ul>
+                            </ul>                        
 
                     </div>
 
                     
-                    <div ref={ image } className="w-6/12 top-0 right-0 transform-gpu">
+                    <div ref={ image } className="w-10/12 md:w-6/12 top-0 py-12 right-0 transform-gpu">
 
                         { renderActiveProject () }
 

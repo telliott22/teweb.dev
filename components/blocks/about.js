@@ -1,36 +1,13 @@
 import Container from '../container'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function about({}){
 
     const text = useRef();
     const textContainer = useRef();
 
-    // useEffect(()=>{
-    //     initScrollAnimation();
-    // },[])
-
-    // function initScrollAnimation(){
-        
-    //     gsap.registerPlugin(ScrollTrigger);   
-
-    //     gsap.from(text.current, {
-    //         scrollTrigger: {
-    //             trigger:textContainer.current,
-    //             scrub: 0.5,
-    //             start: 'top bottom-=200px',
-    //             // end: 'bottom top+=300px',
-    //         },
-    //         y: 100,
-    //         opacity: 0,
-    //     })
-
-    // }
-
     return (
-        <section ref={textContainer}  className="min-h-screen  text-white relative z-10 font-serif flex flex-col md:flex-row md:justify-center md:items-center py-14 md:py-0">
+        <section ref={textContainer}  className="min-h-screen text-white relative z-10 font-serif flex flex-col md:flex-row md:justify-center md:items-center">
 
             <Container>
 
@@ -38,13 +15,13 @@ export default function about({}){
                     <h3 className="text-2xl text-white">About me<span className="relative top-[1px] left-1">👨🏽‍🦲</span></h3>
                 </div>
 
-                <div className="md:w-8/12 lg:w-6/12 m-auto">
+                <div className="md:w-10/12 lg:w-8/12 m-auto">
 
-                    <div ref={text} className="text-xl leading-relaxed relative p">
+                    <div ref={text} className="text-xl leading-relaxed relative py-40">
 
                         <div className="blur-3xl opacity-70 bg-black absolute top-0 left-0 h-full w-full"></div>
 
-                        <div className="z-10 relative space-y-6 p-10">
+                        <div className="z-10 relative space-y-6 md:p-10">
 
                             <p>I'm a freelance full-stack Web Developer with a passion for Javascript who has recently moved from London, England to Berlin. I'm keen to expand my network to find new opportunities to work on exciting projects and find like minded people to collaborate with. I'm currently looking for freelance roles in the tech industry, but I'm open to any opportunity to learn and grow.</p>
 
@@ -64,6 +41,8 @@ export default function about({}){
                 </div>
 
             </Container>
+
+            <div className="bg-black w-full absolute bottom-0 left-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
 
         </section>
     )

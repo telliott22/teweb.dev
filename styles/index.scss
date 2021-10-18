@@ -5,9 +5,43 @@
 @tailwind utilities;
 
 @import './fonts.scss';
+// $translateZ: 200px;
+// $translateX: 100px;
 
-.scew-3d{
+// .scene{
+//     perspective: 2000px;
+//     perspective-origin: center;
+//     transform: translateZ(-$translateZ);
+// }
+// .scew-3d{
 
-    // transform: perspective(1000px) rotateY(45deg) scale(0.8)
 
-}
+
+//     transform-style: preserve-3d;
+//     transition: transform 0.1s;
+//     transform-origin: 0 50%;
+//     // position: fixed;
+//     // top: 50%;
+//     // transform: translateY(-50%);
+
+//     li{
+
+//         position: absolute;
+//         // top: 50%;
+//         // translate: translateY(-50%);
+        
+//         white-space: nowrap;
+
+//         &:nth-child(1) { transform: translateX(#{$translateX}) rotateX( 80deg) translateY(-300px) translateZ(#{$translateZ})}
+//         &:nth-child(2) { transform: translateX(#{$translateX}) rotateX( 60deg) translateY(-225px) translateZ(#{$translateZ})}
+//         &:nth-child(3) { transform: translateX(#{$translateX}) rotateX( 40deg) translateY(-150px) translateZ(#{$translateZ})}
+//         &:nth-child(4) { transform: translateX(#{$translateX}) rotateX(20deg) translateY(-75px) translateZ(#{$translateZ})}
+//         &:nth-child(5) { transform: translateX(#{$translateX}) rotateX(0deg)  translateY(0px) translateZ(#{$translateZ})}
+//         &:nth-child(6) { transform: translateX(#{$translateX}) rotateX(-20deg) translateY(75px) translateZ(#{$translateZ})}
+//         &:nth-child(7) { transform: translateX(#{$translateX}) rotateX(-40deg) translateY(150px) translateZ(#{$translateZ})}
+//         &:nth-child(8) { transform: translateX(#{$translateX}) rotateX(-60deg) translateY(225px) translateZ(#{$translateZ})}
+//         &:nth-child(9) {transform: translateX(#{$translateX}) rotateX(-80deg) translateY(300px) translateZ(#{$translateZ})}
+//     }
+
+// }
+
