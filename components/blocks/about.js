@@ -11,7 +11,7 @@ export default function about({}){
 
             <Container>
 
-                <div className="w-10/12 m-auto top-16 left-6 absolute">
+                <div className="w-10/12 m-auto top-16 left-6 absolute z-20" >
                     <h3 className="text-2xl text-white">About me<span className="relative top-[1px] left-1">👨🏽‍🦲</span></h3>
                 </div>
 

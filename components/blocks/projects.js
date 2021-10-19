@@ -165,11 +165,11 @@ export default function Projects({}){
 
                 <div ref={ scrollContainer } className="relative flex flex-col">
                 
-                    <div className="w-10/12 m-auto top-24 left-0 absolute">
+                    <div className="w-10/12 m-auto top-60 left-0 absolute">
                         <h3 className="text-2xl text-white">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
                     </div>
 
-                    <div className="w-full md:w-6/12 py-60  ">
+                    <div className="w-full md:w-6/12 py-96  ">
 
                             <ul ref={ transformWrapper } className="relative z-10 scew-3d">
 
@@ -180,7 +180,7 @@ export default function Projects({}){
                     </div>
 
                     
-                    <div ref={ image } className="w-10/12 md:w-6/12 top-0 py-12 right-0 transform-gpu">
+                    <div ref={ image } className="w-10/12 md:w-6/12 top-0 py-6 right-0 transform-gpu">
 
                         { renderActiveProject () }
 
