@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 
 
-export default function Projects({}){
+export default function Projects({bgClass, textClass, altBgClass, altTextClass}){
 
 
     const line1 = [
@@ -17,7 +17,7 @@ export default function Projects({}){
     function printLine(line){
 
         const lineArray = line.map((item, index) => {
-            return <span style={{fontVariationSettings: '"wght" 850'}} className="text-[10vw] inline-block text-white font-display-head leading-[0.88] mr-11" key={index}>{item.toUpperCase()}</span>
+            return <span style={{fontVariationSettings: '"wght" 850'}} className={`text-[10vw] inline-block  font-display-head leading-[0.88] mr-11`} key={index}>{item.toUpperCase()}</span>
         })
         
         return (
@@ -34,10 +34,10 @@ export default function Projects({}){
     }
 
     return (
-        <section className="md:min-h-screen bg-black text-black flex flex-col justify-center md:items-center z-10 relative">
+        <section className={`md:min-h-screen ${bgClass} ${textClass} flex flex-col justify-center md:items-center z-10 relative`}>
 
             <div className="md:w-10/12 md:m-auto top-16 left-6 md:absolute pt-8 pl-6  md:p-0">
-                <h3 className="text-2xl text-white">Some tech I <span className="relative top-0 left-1">❤️</span></h3>
+                <h3 className="text-2xl">Some tech I <span className="relative top-0 left-1">❤️</span></h3>
             </div>
 
             <div className="pt-20 pb-28 md:py-0 pointer-events-none"> 

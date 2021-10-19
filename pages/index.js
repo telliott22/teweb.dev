@@ -5,10 +5,36 @@ import About from '../components/blocks/about'
 import Projects from '../components/blocks/projects'
 import Tech from '../components/blocks/tech'
 import CustomCursor from '../components/custom-cursor.js'
+import { useEffect, useState } from 'react'
 
 function renderPage({ pageData, settings }) {
+
+  const [theme, setTheme] = useState('dark')
+  const [textClass, setTextClass] = useState('text-white')
+  const [bgClass, setBgClass] = useState('bg-black')
+  const [altBgClass, setAltBgClass] = useState('bg-white')
+  const [altTextClass, setAltTextClass] = useState('text-grey')
+
+  useEffect(()=>{
+
+    console.log('theme', theme)
+
+    if(theme === 'dark'){
+      setTextClass('text-white')
+      setAltTextClass('text-grey')
+      setBgClass('bg-black')
+      setAltBgClass('bg-white')
+    }else{
+      setTextClass('text-black')
+      setAltTextClass('text-grey-light')
+      setBgClass('bg-white')
+      setAltBgClass('bg-black')
+    }
+
+  },[theme])
+
   return (
-      <Layout > 
+      <Layout  > 
 
         <Head>  
           <title>Tim Elliott - Web Developer based in Berlin</title>
@@ -36,14 +62,19 @@ function renderPage({ pageData, settings }) {
 
         </Head>
 
-        <Hero />
+        <div className={`${textClass} ${bgClass}`}> 
 
-        <About />
+          <Hero theme={theme} setTheme={setTheme} textClass={textClass} bgClass={bgClass} altBgClass={altBgClass} altTextClass={altTextClass} />
 
-        <Projects />
+          <About textClass={textClass} bgClass={bgClass} altBgClass={altBgClass} altTextClass={altTextClass} />
 
-        <Tech />
+          <Projects textClass={textClass} bgClass={bgClass} altBgClass={altBgClass} altTextClass={altTextClass} />
 
+          <Tech textClass={textClass} bgClass={bgClass} altBgClass={altBgClass} altTextClass={altTextClass} />
+
+        </div>
+
+        
         <CustomCursor />
 
       </Layout>

@@ -10,7 +10,7 @@ import SeImage from '../../public/images/se.jpg';
 import MsixImage from '../../public/images/msix.jpg';
 import HighriseImage from '../../public/images/highrise.jpg';
 
-export default function Projects({}){
+export default function Projects({bgClass, textClass, altBgClass, altTextClass}){
 
     const scrollContainer = useRef(0);
     const image = useRef(0);
@@ -98,7 +98,7 @@ export default function Projects({}){
         if (activeProject && activeProject.title) {
 
             return (
-                <div className="bg-black">
+                <div className={`${bgClass}`}>
 
                     <div className="w-full rounded-lg overflow-hidden">
                         <Image src={activeProject.image} />
@@ -126,7 +126,7 @@ export default function Projects({}){
 
     function renderList(){
         return projects.map((project,index) => {
-            return <li className={`project-item md:font-display-head text-[6vw] md:text-[12vw] md:leading-tightish cursor-pointer ${activeProject.title === project.title ? 'text-white' : 'text-grey'}` }
+            return <li className={`project-item md:font-display-head text-[6vw] md:text-[12vw] md:leading-tightish cursor-pointer ${activeProject.title === project.title ? textClass : altTextClass}` }
              data-project-index={index} style={{fontVariationSettings: '"wght" 850'}} key={index}>{project.title}</li>
         })
     }
@@ -156,14 +156,14 @@ export default function Projects({}){
     }
 
     return (
-        <section className="min-h-screen bg-black font-serif text-white overflow-hidden z-10 relative">
+        <section className={`min-h-screen ${bgClass} font-serif ${textClass} overflow-hidden z-10 relative`}>
 
             <Container>
 
                 <div ref={ scrollContainer } className="relative flex flex-col">
                 
                     <div className="w-10/12 z-10 m-auto top-10 md:top-60 left-0 absolute">
-                        <h3 className="text-2xl text-white">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
+                        <h3 className="text-2xl">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
                     </div>
 
                     <div className="w-4/12 md:w-6/12 py-20 my-20  md:py-96">

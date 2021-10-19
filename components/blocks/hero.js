@@ -15,7 +15,7 @@ import gsap from 'gsap';
 import Container from '../container'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-export default function Hero() {
+export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, altTextClass} ) {
 
   const [animated, setAnimated] = useState(false)
   const whiteBackground = useRef(null);
@@ -24,13 +24,12 @@ export default function Hero() {
   const text = useRef(null);
   const links = useRef(null);
   const hero = useRef(null);
+  const themeSymbol = useRef(null);
 
   function initIntroAnimation(){
 
     document.documentElement.classList.add('overflow-hidden');
     
-    
-
     const customCursor = document.querySelector('#customCursor');
 
     const delay = 0.6;
@@ -70,7 +69,7 @@ export default function Hero() {
       // duration: 0.5,
       delay: delay
     })
-    .set(customCursor,{
+    .set(themeSymbol.current,{
       opacity: 1,
       // duration: 0.5,
       delay: delay
@@ -152,10 +151,10 @@ export default function Hero() {
     }else{
 
      return( 
-     <div className="bg-white fixed top-0 left-0 z-50 h-screen w-screen" ref={whiteBackground}>
+     <div className={`${altBgClass} fixed top-0 left-0 z-50 h-screen w-screen`} ref={whiteBackground}>
 
         <div className="animate-scale-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div ref={blackDot} className="bg-black h-[2vh] w-[2vw]"></div>
+          <div ref={blackDot} className={`${bgClass} h-[2vh] w-[2vw]`}></div>
         </div>
        
       </div>
@@ -165,12 +164,32 @@ export default function Hero() {
 
   }
 
+  function handleThemeButtonClick(){
+
+    if(theme === 'dark'){
+      setTheme('light')
+    }else{
+      setTheme('dark')
+    }
+
+  }
+
+  function renderThemeSymbol(){
+
+    if(theme === 'dark'){
+      return '☀️'
+    }else{
+      return '🌚'
+    }
+
+  }
+
   return (
     <Container>
 
       { loadingScreen() }
 
-      <section ref={ hero } className="min-h-screen bg-black text-white py-6 relative mb-28">
+      <section ref={ hero } className={`min-h-screen py-6 relative mb-28 ${textClass} ${ bgClass}`}>
 
         <div className="flex flex-row">
           <h1 style={{fontVariationSettings: '"wght" 850'}} className="font-display-head text-11xl md:text-10xl leading-tighter z-10 relative opacity-0 text-section" ref={ title } >
@@ -242,6 +261,12 @@ export default function Hero() {
             </div>
 
           </div>
+
+        </div>
+
+        <div className="fixed left-6 bottom-6 text-4xl z-50 cursor-pointer opacity-0" ref={themeSymbol} onClick={handleThemeButtonClick}>
+
+            {renderThemeSymbol()}
 
         </div>
 

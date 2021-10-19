@@ -1,25 +1,25 @@
 import Container from '../container'
 import { useRef } from 'react';
 
-export default function about({}){
+export default function about({bgClass, textClass, altBgClass, altTextClass}){
 
     const text = useRef();
     const textContainer = useRef();
 
     return (
-        <section ref={textContainer}  className="min-h-screen text-white relative z-10 font-serif flex flex-col md:flex-row md:justify-center md:items-center">
+        <section ref={textContainer}  className={`min-h-screen ${textClass} relative z-10 font-serif flex flex-col md:flex-row md:justify-center md:items-center`}>
 
             <Container>
 
                 <div className="w-10/12 m-auto top-32 left-6 absolute z-20" >
-                    <h3 className="text-2xl text-white">About me<span className="relative top-[1px] left-1">👨🏽‍🦲</span></h3>
+                    <h3 className="text-2xl">About me<span className="relative top-[1px] left-1">👨🏽‍🦲</span></h3>
                 </div>
 
                 <div className="md:w-10/12 lg:w-8/12 m-auto">
 
                     <div ref={text} className="text-xl leading-relaxed relative py-20 my-40">
 
-                        <div className="blur-3xl opacity-70 bg-black absolute top-0 left-0 h-full w-full"></div>
+                        <div className={`blur-3xl opacity-70 ${bgClass} absolute top-0 left-0 h-full w-full`}></div>
 
                         <div className="z-10 relative space-y-6 md:p-10">
 
@@ -41,8 +41,6 @@ export default function about({}){
                 </div>
 
             </Container>
-
-            <div className="bg-black w-full absolute bottom-0 left-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
 
         </section>
     )
