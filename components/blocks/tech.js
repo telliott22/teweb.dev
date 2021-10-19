@@ -40,7 +40,7 @@ export default function Projects({}){
                 <h3 className="text-2xl text-white">Some tech I <span className="relative top-0 left-1">❤️</span></h3>
             </div>
 
-            <div className="pt-20 pb-28 md:py-0"> 
+            <div className="pt-20 pb-28 md:py-0 pointer-events-none"> 
 
                 <Marquee {...marqueeConfig}>
                     {printLine(line1)}
