@@ -15,6 +15,25 @@ function renderPage({ pageData, settings }) {
           <link rel="icon" type="image/svg+xml" href="favicon.svg" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Tim Elliott is a web developer based in Berlin. He is passionate about building websites and web applications." />
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-4MNQGC8ZN6`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4MNQGC8ZN6', {
+                page_path: window.location.pathname,
+              });
+            `,
+            }}
+          />
+
         </Head>
 
         <Hero />
