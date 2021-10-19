@@ -117,8 +117,6 @@ export default function Projects({}){
 
                     </div>
 
-                   
-
                 </div>
             )
 
@@ -128,12 +126,12 @@ export default function Projects({}){
 
     function renderList(){
         return projects.map((project,index) => {
-            return <li className={`project-item font-display-head text-[12vw] leading-tightish cursor-pointer ${activeProject.title === project.title ? 'text-white' : 'text-grey'}` }
+            return <li className={`project-item md:font-display-head text-[6vw] md:text-[12vw] md:leading-tightish cursor-pointer ${activeProject.title === project.title ? 'text-white' : 'text-grey'}` }
              data-project-index={index} style={{fontVariationSettings: '"wght" 850'}} key={index}>{project.title}</li>
         })
     }
 
-    function getCoords(elem) { // crossbrowser version
+    function getCoords(elem) {
 
         if(elem){
 
@@ -159,17 +157,16 @@ export default function Projects({}){
 
     return (
         <section className="min-h-screen bg-black font-serif text-white overflow-hidden z-10 relative">
-        {/* <section className="h-[200vh] bg-black font-serif text-white overflow-hidden z-10 relative"> */}
 
             <Container>
 
                 <div ref={ scrollContainer } className="relative flex flex-col">
                 
-                    <div className="w-10/12 m-auto top-60 left-0 absolute">
+                    <div className="w-10/12 z-10 m-auto top-10 md:top-60 left-0 absolute">
                         <h3 className="text-2xl text-white">Some projects I've worked on <span className="relative top-[1px] left-1">📜</span></h3>
                     </div>
 
-                    <div className="w-full md:w-6/12 py-96  ">
+                    <div className="w-4/12 md:w-6/12 py-20 my-20  md:py-96">
 
                             <ul ref={ transformWrapper } className="relative z-10 scew-3d">
 
@@ -180,7 +177,7 @@ export default function Projects({}){
                     </div>
 
                     
-                    <div ref={ image } className="w-10/12 md:w-6/12 top-0 py-6 right-0 transform-gpu">
+                    <div ref={ image } className="w-8/12 md:w-6/12 top-0 py-6 right-0 transform-gpu">
 
                         { renderActiveProject () }
 
