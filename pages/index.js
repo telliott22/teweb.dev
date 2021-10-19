@@ -13,7 +13,7 @@ function renderPage({ pageData, settings }) {
   const [textClass, setTextClass] = useState('text-white')
   const [bgClass, setBgClass] = useState('bg-black')
   const [altBgClass, setAltBgClass] = useState('bg-white')
-  const [altTextClass, setAltTextClass] = useState('text-grey')
+  const [altTextClass, setAltTextClass] = useState('text-grey-dark')
 
   useEffect(()=>{
 
@@ -21,7 +21,7 @@ function renderPage({ pageData, settings }) {
 
     if(theme === 'dark'){
       setTextClass('text-white')
-      setAltTextClass('text-grey')
+      setAltTextClass('text-grey-dark')
       setBgClass('bg-black')
       setAltBgClass('bg-white')
     }else{
