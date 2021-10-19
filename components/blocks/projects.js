@@ -104,7 +104,7 @@ export default function Projects({bgClass, textClass, altBgClass, altTextClass})
                         <Image src={activeProject.image} />
                     </div>
 
-                    <div className="w-4/5 ml-auto mt-10 space-y-4"> 
+                    <div className="w-4/5 ml-auto mt-10 space-y-4 text-right"> 
 
                         <a target="_blank" href={activeProject.url}> <span className="text-xl mr-1">🌍</span> {activeProject.url}</a>
 
