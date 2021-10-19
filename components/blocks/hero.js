@@ -283,7 +283,7 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
             <li><a className="p-5 cursor-none" data-hover-icon="github.png" href="https://github.com/telliott22" target="_blank">Github</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="envelope.png" href="mailto:hello@teweb.dev">Email</a></li>
             <li><a className="p-5 cursor-none" data-hover-icon="laptop.png" href="https://codepen.io/timothybuktu" target="_blank">Codepen</a></li>
-            <li><a className="p-5 cursor-none" data-hover-icon="cv.png" href="">CV</a></li>
+            <li><a className="p-5 cursor-none" data-hover-icon="cv.png" target="_blank" href="/Timothy_Elliott_CV.pdf">CV</a></li>
           </ul>
         </div>
       </section>
