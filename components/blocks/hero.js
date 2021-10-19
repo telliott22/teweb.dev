@@ -14,6 +14,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Container from '../container'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { set } from 'date-fns';
 
 export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, altTextClass} ) {
 
@@ -43,6 +44,31 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
       onComplete: () => {
         setAnimated(true)
         document.documentElement.classList.remove('overflow-hidden');
+
+        setTimeout(() => {
+          setTheme('light')
+        },250)
+
+        setTimeout(() => {
+          setTheme('dark')
+        },450)
+
+        setTimeout(() => {
+          setTheme('light')
+        },650)
+
+        setTimeout(() => {
+          setTheme('dark')
+        },850)
+
+        setTimeout(() => {
+          setTheme('light')
+        },1150)
+
+        setTimeout(() => {
+          setTheme('dark')
+        },1250)
+
       }
     });
 
@@ -135,7 +161,7 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
 
       timeline.play()
 
-    },6000)
+    },8000)
 
   }
 
