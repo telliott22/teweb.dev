@@ -31,7 +31,7 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
 
     document.documentElement.classList.add('overflow-hidden');
     
-    const customCursor = document.querySelector('#customCursor');
+    // const customCursor = document.querySelector('#customCursor');
 
     const delay = 0.6;
 
@@ -68,6 +68,14 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
         setTimeout(() => {
           setTheme('dark')
         },1250)
+
+        setTimeout(() => {
+          setTheme('light')
+        },1550)
+
+        setTimeout(() => {
+          setTheme('dark')
+        },1850)
 
       }
     });
