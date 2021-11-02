@@ -69,14 +69,6 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
           setTheme('dark')
         },1250)
 
-        setTimeout(() => {
-          setTheme('light')
-        },1550)
-
-        setTimeout(() => {
-          setTheme('dark')
-        },1850)
-
       }
     });
 
