@@ -23,7 +23,7 @@ export default function about({bgClass, textClass, altBgClass, altTextClass}){
 
                         <div className="z-10 relative space-y-6 md:p-10">
 
-                            <p>I'm a freelance full-stack Web Developer with a passion for Javascript who has recently moved from London, England to Berlin. I'm keen to expand my network to find new opportunities to work on exciting projects and find like minded people to collaborate with. I'm currently looking for freelance roles in the tech industry, but I'm open to any opportunity to learn and grow.</p>
+                            <p>I'm a freelance Full-Stack Web Developer with a passion for Javascript who has recently moved from London, England to Berlin. I'm keen to expand my network to find new opportunities to work on exciting projects and find like minded people to collaborate with. I'm currently looking for freelance roles in the tech industry, but I'm open to any opportunity to learn and grow.</p>
 
                             <p>With nearly 10 years professional experience, I've worked on a range of tech stacks in both an Agency and Product enviroment and am happy working independantally or as part of a team</p>
 
