@@ -299,7 +299,7 @@ export default function Hero({theme, setTheme, bgClass, textClass, altBgClass, a
         <div className="absolute bottom-6 left-0 text-right text-3xl font-serif space-y-2 w-full md:w-1/2 md:right-0 md:left-auto text-section">
 
           <div className="mb-20 space-y-2 z-20  opacity-0" ref={text}>
-            <p>Full-stack web developer</p>
+            <p>Full-Stack Web Developer</p>
             <p>Made in London <span className="relative text-6xl top-[5px]">🇬🇧</span></p>
             <p>Based in Berlin <span className="relative text-6xl top-[5px]">🇩🇪</span></p>
           </div>
